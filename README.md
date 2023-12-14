@@ -7,12 +7,14 @@
 |WiFi| Yes | No | Wes | Yes |
 |LAN | No | Yes | No | Yes |
 |SolisCloud| Yes | Yes | Yes | Yes |
-| SolisCloud Remote Control | No| No | Yes |Yes |
+| SolisCloud Remote Control | Yes*| Yes* | Yes |Yes |
 | Home Assistant via SolarMan v5 | Yes | No | No | No |
 | Home Assistant via Core Modbus TCP | No | Yes (3389) | No | Yes (502) |
 | Home Assistant via SolaX Modbus Integration | No | Yes (3389) | No | Yes (502) |
 | Home Assistant / SolisCloud Simultaneous | Yes | Yes | No | No |
-| Home Assistant via Solis API | ? | Yes | Yes | Yes |
+| Home Assistant via Solis API | Yes | Yes | Yes | Yes |
+
+**(*)** First reported working in April 2023; however, there are mixed messages from users complaining about the SolisCloud Remote Control with legacy dataloggers.
 
 <h2>Current Data Loggers</h3>
 These are currently being sold and supported by Solis:
@@ -24,7 +26,7 @@ This seems to be the most common datalogger supplied with new systems. WiFi only
 
 - Connect to SolisCloud (data at 5-minute intervals)
 - Control the inverter via SolisClud remote control (https://solis-service.solisinverters.com/en/support/solutions/articles/44002373796-inverter-remote-control-application)
-- Connect to Home Assistant using the read-only API integration at 5 5-minute refresh: (https://github.com/hultenvp/solis-sensor)
+- Connect to Home Assistant using the read-only API integration at a 5-minute refresh: (https://github.com/hultenvp/solis-sensor)
 
 Without additional hardware or its firmware modification, you cannot directly connect to Home Assistant via Modbus TCP.
 
@@ -37,15 +39,15 @@ You can get Home Assistant and Soliscloud without modifying its firmware if you 
 
 ![S2](https://www.solartradesales.co.uk/Cache/Images/Solis-Data-Logging-Stick-WL-4-Pin-03-500x500.jpg)
 
-Less common but available to purchase in the UK. This has WiFi and wired LAN. With it you can:
+Less common but available to purchase in the UK. This has WiFi and wired LAN. With it, you can:
 
 - Connect to SolisCloud (data at 5-minute intervals)
 - Control the inverter via SolisClud remote control (https://solis-service.solisinverters.com/en/support/solutions/articles/44002373796-inverter-remote-control-application)
-- Connect to Home Assistant using the read-only API integration at 5 5-minute refresh: (https://github.com/hultenvp/solis-sensor)
+- Connect to Home Assistant using the read-only API integration at a 5-minute refresh: (https://github.com/hultenvp/solis-sensor)
 - Connect directly to Home Assistant using the core Modbus TCP integration (https://github.com/fboundy/ha_solis_modbus) over TCP port 502
 - Connect directly to Home Assistant using the SolaX Modbus TCP integration (https://github.com/wills106/homeassistant-solax-modbus) over TCP port 502
 
-if you connect directly to the inverter from Home Assistant you will lose SolisCloud connectivity unless you go use additional hardware such as this approach: https://github.com/alienatedsec/solis-ha-modbus-cloud
+if you connect directly to the inverter from Home Assistant you will lose SolisCloud connectivity unless you use additional hardware such as this approach: https://github.com/alienatedsec/solis-ha-modbus-cloud
 
 <h2>Legacy Data Loggers</h3>
 These are no longer being sold or supported by Solis:
@@ -56,7 +58,7 @@ These are no longer being sold or supported by Solis:
 These are LAN-only devices. What you can do with them seems to vary according to serial number but may include:
 - Connect to SolisCloud (data at 5-minute intervals)
 - Control the inverter via SolisClud remote control (https://solis-service.solisinverters.com/en/support/solutions/articles/44002373796-inverter-remote-control-application)
-- Connect to Home Assistant using the read-only API integration at 5 5-minute refresh: (https://github.com/hultenvp/solis-sensor)
+- Connect to Home Assistant using the read-only API integration at a 5-minute refresh: (https://github.com/hultenvp/solis-sensor)
 - Connect directly to Home Assistant using the core Modbus TCP integration (https://github.com/fboundy/ha_solis_modbus) over TCP port 3389
 - Connect directly to Home Assistant using the SolaX Modbus TCP integration (https://github.com/wills106/homeassistant-solax-modbus) over TCP port 3389
 
@@ -77,6 +79,6 @@ These are pretty much unobtainable now. They communicate using Modbus RTU encaps
 
 There are a number of other direct ModBus approaches:
 
-- Using an [Elfin EW11 and GC-1201K](https://github.com/Jumpy07/Solis---SolisCloud-and-Home-Assistant/tree/main?fbclid=IwAR0MD-xyu1xAgjVkqq72PsfEIgRXie2Xfkw18F-ABhq5uBIzVg9c2FvG23U)
+- Using an [Elfin EW11 and GC-1201K](https://github.com/Jumpy07/Solis---SolisCloud-and-Home-Assistant)
 - Using [Waveshare Devices](https://github.com/alienatedsec/solis-ha-modbus-cloud)
-- Using a [Raspberry Pi as a RS485 bridge](https://github.com/mjh-homeassistant/solis-multiplexer?fbclid=IwAR1jBrAm_-cx7-ioJXFHdLrIXySKcRXJdp_YkdLIxKFv2ZpLetNNezewcCA) 
+- Using a [Raspberry Pi as a RS485 bridge](https://github.com/mjh-homeassistant/solis-multiplexer) 
