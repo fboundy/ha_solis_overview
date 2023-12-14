@@ -4,7 +4,7 @@
 
 | Connection Type | DLS-W| DLS-L| S3-WiFi-ST| S2-WL-ST|
 |:--|:--: |:--:|:--:|:--:|
-|WiFi| Yes | No | Wes | Yes |
+|WiFi| Yes | No | Yes | Yes |
 |LAN | No | Yes | No | Yes |
 |SolisCloud| Yes | Yes | Yes | Yes |
 | SolisCloud Remote Control | Yes*| Yes* | Yes |Yes |
