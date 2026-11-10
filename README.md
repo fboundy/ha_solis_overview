@@ -47,7 +47,15 @@ Less common but available to purchase in the UK. This has WiFi and wired LAN. Wi
 - Connect directly to Home Assistant using the core Modbus TCP integration (https://github.com/fboundy/ha_solis_modbus) over TCP port 502
 - Connect directly to Home Assistant using the SolaX Modbus TCP integration (https://github.com/wills106/homeassistant-solax-modbus) over TCP port 502
 
-if you connect directly to the inverter from Home Assistant you will lose SolisCloud connectivity unless you use additional hardware such as this approach: https://github.com/alienatedsec/solis-ha-modbus-cloud
+If you connect directly to the inverter from Home Assistant you will lose SolisCloud connectivity unless you use additional hardware such as this approach: https://github.com/alienatedsec/solis-ha-modbus-cloud
+
+This device is based on an ESP32 WROVER-E and can be flashed with ESPHome. In that case, the hardware is fully supported :
+- MODBUS on serial port
+  -  Modbus can be configured locally on the ESPHome and expose the values in HomeAssistant, or using a ModbusBridge like https://github.com/rosenrot00/esphome_modbus_bridge (and values can be exposed to any ModbusTCP compatible solution. 
+- Wifi
+- Ethernet
+- Bluetooth (BLE)
+- Any other needed software component
 
 <h2>Legacy Data Loggers</h3>
 These are no longer being sold or supported by Solis:
